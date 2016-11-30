@@ -123,22 +123,27 @@ background-size:cover;
 /*
  * 优惠券、红包 样式
  */
-.box{margin:0 auto 12px auto;width:100%;height:100%;display:none;}
-.span1{width:60%;position:relative;border:1px solid;margin:2% 0 2% 9%;}
+.box{margin:0 auto 12px auto;width:100%;height:100%;/* display:none; */}
+.span1{width:62%;position:relative;border:1px solid;margin:2% 0 2% 9%;}
 .span1 p{line-height:20px;padding:0px 4px;}
 .span2{width:20%;border:1px solid;margin:2% 0 2% 0;}
-.span3{width:20%;border:1px solid;margin:2% 0 2% 0;border-left:none;height:60px;}
+.span3{width:100%;border:1px solid;border-left:none;height:60px;}
 .span3 span{width:100%;text-align:center;line-height:60px;}
-.span4{width:60%;position:relative;border:1px solid;margin:2% 0 2% 9%;height:60px;}
+.span4{width:100%;position:relative;border:1px solid;height:60px;}
 .span4 p{line-height:30px;padding:0px 4px;}
 .input{height:20px;width:100%;padding:10px 0px;position:absolute;top:0;}
 .button{width:100%;height:40px;font:normal 18px/24px "微软雅黑";cursor:pointer;}
+
+#youhui_info{margin:2% 0 2% 9%;}
+.table{width:88%;max-width:768px;margin:0 auto;border-collapse:collapse;}
+.td1{padding:3px 0px 7px 7px;}
+.td2{padding:3px 7px 7px 0px;}
 /*优惠券、红包 end*/
 
 /*
  * 商品详情 样式
  */
-.goods_image{position: relative;width:100%;height:120px;margin:10px 0 0 0;cursor:pointer;background-size:100%;}
+.goods_image{position:relative;width:100%;height:120px;margin:10px 0 0 0;cursor:pointer;background-size:cover;overflow:hidden;}
 .g_images{width:100%;height:100%;}
 
 /*
@@ -229,7 +234,7 @@ background-size:cover;
  */
 .footer{text-align:center;padding:4px 0;line-height:14px;}
 .footer a{display:inline-block;padding:0 10px;background-position:right -60px;}
-.foot-toolbar{border-radius:0 0 0.1em 0.1em;z-index:99;opacity:1;position:fixed;bottom:0;overflow:visible;_position:absolute;_top:expression(documentElement.scrollTop+documentElement.clientHeight-this.offsetHeight);}
+.foot-toolbar{border-radius:0 0 0.1em 0.1em;z-index:99;opacity:1;position:fixed;bottom:-1px;overflow:visible;_position:absolute;_top:expression(documentElement.scrollTop+documentElement.clientHeight-this.offsetHeight);}
 .menu{width:100%;max-width:768px;height:3em;}
 .menu li{float:left;height:3em;line-height:3em;text-align:center;width:33%;}
 .line-right{border-right:1px solid #656565;}

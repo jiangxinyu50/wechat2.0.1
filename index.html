@@ -21,15 +21,20 @@
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js" type="text/javascript"></script> -->
 <script language="javascript">
 $(document).ready(function(){
-  /* banner图滑动 */
+   /* banner图滑动 */
 	var mySwiper = new Swiper('.index-banner',{
-		pagination: '.index-pagination',
+		autoplay:5000,
+		effect:'fade',
+		initialSlide:1,
+		pagination:'.index-pagination',
+		prevButton:'.swiper-button-prev',
+		nextButton:'.swiper-button-next',
 		loop:true,
-		grabCursor: true,
-		paginationClickable: true,
-		onSlideChangeEnd : function() {
-			var bannerTitle = $(".index-banner ul li.swiper-slide-active img").attr("title");
-			$(".banner-title p").text(bannerTitle);
+		grabCursor:true,
+		paginationClickable:true,
+		onSlideChangeEnd:function(){
+		  var bannerTitle = $(".index-banner ul li.swiper-slide-active img").attr("title");
+		  $(".banner-title p").text(bannerTitle);
 		}
 	})
 	var bannerFstTitle = $(".index-banner ul li.swiper-slide-active img").attr("title");
@@ -41,9 +46,9 @@ $(document).ready(function(){
 })
 
 //使用lazyload插件来实现图的缓加载效果
-$(function() {   
+$(function(){   
       $("img").lazyload({
-		effect : "fadeIn"
+		effect:"fadeIn"
 	});
 });
 </script>
@@ -84,7 +89,7 @@ $(function() {
 	   	  <a href="pages/youhuiquan.html"><div class="quan-style"></div></a>
 	   	  <a href="pages/youhuiquan.html">优惠券</a><br/><span id="yhq_num">3</span><span>张</span>
 	   </div>	
-	   <div class="quan">
+	   <div class="quan" style="border-right:none;">
 	   	  <a href="pages/hongbao.html"><div class="hongbao-style"></div></a>
 	   	  <a href="pages/hongbao.html">红包</a><br/><span id="hb_num">2</span><span>个</span>
 	   </div>
@@ -97,7 +102,7 @@ $(function() {
 	<div name="goods" style="width:100%;">
 		  <!-- ===========新品上市=========== -->
 		  <div id="xpss" class="goods_image">
-        	<img src="images/ningmeng.jpg"  class="g_images" alt="Alexander's 新品上市" title="Alexander's 新品上市"/>
+        	<img src="images/ningmeng1.jpg"  class="g_images" alt="Alexander's 新品上市" title="Alexander's 新品上市"/>
 		  </div>
 
 		  <!-- 新品上市 -->
@@ -200,7 +205,9 @@ $(function() {
           <ul class="goodslist">
              <li>
             	<div class="gl">
-	            	<div class="gl-left"><a href="#"><img src="images/binggun1.jpg" alt="Alexander's 水果冰棒礼盒" title="Alexander's 水果冰棒礼盒"></a></div>
+	            	<div class="gl-left"><a href="#">
+	            	 	<img src="images/binggun1.jpg" alt="Alexander's 水果冰棒礼盒" title="Alexander's 水果冰棒礼盒">
+	            	</a></div>
 	            	<div class="gl-right">
 	                	<span><a href="#">水果冰棒礼盒</a></span>	
 	                	<p id="price">￥168.00元/盒</p>
@@ -439,7 +446,7 @@ $(function() {
             	<div class="gl">
 	            	<div class="gl-left"><a href="#"><img src="images/binggun1.jpg" alt="Alexander's 水果冰棒礼盒" title="Alexander's 水果冰棒礼盒"></a></div>
 	            	<div class="gl-right">
-	                	<span><a href="#">折—水果冰棒礼盒</a></span>	
+	                	<span><a href="#">水果冰棒礼盒——折扣</a></span>	
 	                	<p id="price">￥108.00元/盒</p>
 	                	<a class="btn_down" href="#">加入购物车</a>
 	                </div>

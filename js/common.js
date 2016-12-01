@@ -23,8 +23,23 @@ $(window).resize(function(){
 	fontSizeHack();
 })
 
-/* -------------购物车---------------- */
 $(document).ready(function(){
+
+	/* -------------主页顶部信息---------------- */
+function time_range(beginHours,endHours){
+var n = new Date ();
+var bHours = beginHours;
+var eHours = endHours;
+
+if (n.getHours() - bHours > 0 && n.getHours() - eHours < 0) {
+    document.getElementById('infomation').innerHTML='现在下单，今日可送达';
+}else{
+    document.getElementById('infomation').innerHTML='现在下单，次日才会送达';        
+}
+}
+time_range("00","14");  /* 当天配送的时间为--->在凌晨0点至下午14点之间下单 */
+
+	/* -------------购物车---------------- */
 	$('#cart').click(function(){
 	    //如果隐藏层是不显示的，点击时则是展现出来。	
 	   if($("#MyDiv").css("display")=="none" && $("#fade").css("display")=="none") {
@@ -158,6 +173,7 @@ $(document).ready(function(){
 	});
 
 	/*=============图标旋转特效============= */
+
 	/*-------------优惠券特效------------*/
 	$('#quan').click(function(){                                 //购物车页面，点击“优惠券”特效
 		if ($('#right1').css("transform")=="none") {			 //当点击优惠券时作判断
@@ -188,7 +204,6 @@ $(document).ready(function(){
 			});
 			$("#hiden_hongbao").animate({height:'hide'},500);	 //优惠券显示，则红包隐藏 下拉效果 0.5秒
   			}
-
 		}else{
 			$("#right1").css({
 				  "transform":"none",							//transform:旋转
@@ -219,8 +234,7 @@ $(document).ready(function(){
 				  "-o-transition":"All 0.3s ease-in-out"
   			});
   			$("#hiden_hongbao").animate({height:'show'},500);	 //点击显示 红包隐藏层 下拉效果 0.5秒
-
-  			/*===============如果优惠券是打开状态，则关闭==============*/
+  			/*-----------------如果优惠券是打开状态，则关闭--------------*/
   			if ($('#right1').css("transform")!="none") {        
   				$("#right1").css({
 				  "transform":"none",							//transform:旋转
@@ -235,7 +249,6 @@ $(document).ready(function(){
 			});
 			$("#hiden_quan").animate({height:'hide'},500);	 //再点击隐藏 优惠券隐藏层 下拉效果 0.5秒
   			}
-
 		}else{
 			$("#right2").css({
 				  "transform":"none",							//transform:旋转

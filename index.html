@@ -43,7 +43,22 @@ $(document).ready(function(){
 	fjcHeight();
 	fontSizeHack();
 	$(".index-banner ul li img").show();
-})
+
+		/* -------------主页顶部信息---------------- */
+function time_range(beginHours,endHours){
+var n = new Date ();
+var bHours = beginHours;
+var eHours = endHours;
+
+if (n.getHours() - bHours > 0 && n.getHours() - eHours < 0) {
+    document.getElementById('infomation').innerHTML='现在下单，今日可送达';
+}else{
+    document.getElementById('infomation').innerHTML='现在下单，次日才会送达';        
+}
+}
+time_range("00","14");  /* 当天配送的时间为--->在凌晨0点至下午14点之间下单 */
+
+});
 
 //使用lazyload插件来实现图的缓加载效果
 $(function(){   
@@ -51,6 +66,7 @@ $(function(){
 		effect:"fadeIn"
 	});
 });
+
 </script>
 </head>
 
@@ -59,7 +75,7 @@ $(function(){
 
 	<!-- ==================顶部栏================ -->
     <div class="header">	
-      <div id="info" name="info" class="info"><span id="infomation" name="infomation" style="font-size:1.5em;color:#000;">现在下单，今天可送达</span></div>
+      <div id="info" name="info" class="info"><span id="infomation" name="infomation" style="font-size:1.4em;color:#000;">现在下单，今日可送达</span></div>
       <div class="DivSelect">
     	<select id="city" class="SelectList">  
     		<option value="深圳" selected="selected">深 圳</option>
@@ -458,7 +474,7 @@ $(function(){
     </div>
        
 	<!-- ===========购物车隐藏层=========== -->
-	<div id="fade" class="black_overlay">
+<!--	<div id="fade" class="black_overlay">
 	</div>
 
 	 <div id="MyDiv" class="white_content content_size">
@@ -484,7 +500,7 @@ $(function(){
          	<button id="go_buy" class="go-buy"> 立即购买 </button>
           </div>
         </div>
-	  </div>
+	  </div>  -->
 
     <!-- ===========footer=========== -->
 	<div style="margin-top:15px;display:block;border-bottom:solid 1px #FFFFFF;border-top:solid 1px #cacaca;text-indent:-9999px;height:0px;">line</div>
